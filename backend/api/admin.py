@@ -6,7 +6,6 @@ from .models import Image
 
 class ImageAdmin(admin.ModelAdmin):
     def image(self, obj):
-        print(obj.image.url)
         return mark_safe('<img src="{obj.image.url}" style="width:100px;height:auto;">')
 
     list_display = ('title', 'image')
