@@ -25,8 +25,9 @@ class _QuestionState extends State<QuestionPage> {
         future: futureImage,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return Image.network('http://127.0.0.1:8000/images/${snapshot.data!.title}.png', width: 250);
-
+            return Image.network(
+                'http://127.0.0.1:8000/images/${snapshot.data!.title}.png',
+                width: 250);
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
